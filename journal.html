@@ -20,7 +20,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="icon" type="image/png" href="{Favicon}">
-  <title>{Title}</title>
+  <title>entries from google sheets</title>
 
   <!--jQuery-->
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
@@ -55,6 +55,7 @@ Instructions are in the "INSTRUCTIONS" tab.-->
          1jKi9Knw7e5qr4bXr_zQib8FwpGM7E6eqRx1tH3JruIA (this part)
       /edit?usp=sharing
 
+
     TO GET API KEY:
     1. Go to https://console.cloud.google.com/projectselector2/apis/dashboard
     (of the account the sheet is under)
@@ -65,6 +66,10 @@ Instructions are in the "INSTRUCTIONS" tab.-->
 
 
     https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqCPiqVRpH7EFhfK16aSEGWIMhpp-E0y2oJATO_rlLkJ3DZOJTOXFxq9XWgtj_JUf0BjhVRFSlY3T/pub?gid=0&single=true&output=csv
+
+
+    Journal Entries :
+    https://docs.google.com/spreadsheets/d/1VnzBXllgMM57G26XiqptBeTBS7ZUNjMgA4V3ydKWwv0/edit#gid=0
 
     */
 
@@ -81,17 +86,29 @@ Instructions are in the "INSTRUCTIONS" tab.-->
 
 <style>
 :root {
-  --fontSize: 16px;
-  --cardWidth: 300px; /*entire card*/
+  --fontSize: 15px;
+  --cardWidth: 400px; /*entire card*/
   --imgHeight: 250px;
 
-  --accent: #B9CCB5;
-  --background: #eee;
-  --sidebarBackground: #111;
+  --accent: #2f201d;
+  --background: #e4b176 repeat url('imgs/bg_dark_oak_log.png') top center;
+  --sidebarBackground: #e4b176 repeat url('imgs/bg_blackstone.png') top center;
   --sidebarText: #fff;
-  --cardBackground: #fff;
-  --cardText: #111;
+  --cardBackground: #fefbf2;
+  --cardText: #3e3333;
 }
+
+/*
+
+background: #e4b176 repeat url('imgs/bg_dark_oak_log.png') top center;
+
+--background: #eee;
+--accent: #B9CCB5;
+--sidebarBackground: #111;
+--sidebarText: #fff;
+--cardBackground: #fff;
+--cardText: #111;
+*/
 
 
 /*STYLES*/
@@ -109,6 +126,7 @@ Instructions are in the "INSTRUCTIONS" tab.-->
 body {
   font-size: var(--fontSize);
   font-family: 'Raleway';
+  font-family: 'Verdana';
 }
 
 #wrapper {
@@ -127,7 +145,8 @@ aside {
   height: 100%;
   z-index: 1;
   font-family: 'Raleway';
-  padding: 50px;
+  font-family: 'Courier';
+  padding: 20px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -150,8 +169,11 @@ aside h1 {
 
 .sep {
   height: 5px;
+  height: 2px;
   width: 50px;
+  width: 100%;
   background: var(--accent);
+  background: #e4b176;
   margin: 5px 0 13px;
 }
 
@@ -167,13 +189,14 @@ nav a {
 
 nav ul li {
   list-style-type: none;
-  margin: 25px 0;
+  margin: 20px 0;
   font-size: 16px;
   font-weight: 600;
 }
 
 #abt {
   line-height: 160%;
+  line-height: 120%;
 }
 
 #social {
@@ -195,12 +218,14 @@ nav ul li {
 /*GRID*/
 
 main {
+
   position: relative;
   width: calc(100% - 300px);
   min-height: 100vh;
   height: auto;
   margin-left: 300px;
   background: var(--background);
+  /* background: #e4b176 repeat url('imgs/bg_dark_oak_log.png') top center; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -223,6 +248,9 @@ main {
   overflow: hidden;
   margin: 15px;
   color: var(--cardText);
+  border:2px solid #000;
+  border:6px solid #e4b176;
+
 }
 
 .card > a {
@@ -244,14 +272,17 @@ main {
   height: auto;
   padding: 15px 20px 0;
   line-height: 160%;
+  line-height: 135%;
   overflow: hidden;
   border-bottom: 15px solid var(--cardBackground);
+
 }
 
 .card {
  -webkit-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.1);
   box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.1);
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(31, 31, 31) 0px 0px 0px 2px, rgba(0, 0, 0, 0.35) 0px 3px 3px 0px, rgba(0, 0, 0, 0.15) 0px 7px 7px 3px; */
 }
 
 aside {
@@ -262,7 +293,10 @@ aside {
 
 .box h2 {
   font-size: 1.1rem;
+  font-size: 1.4rem;
   font-family: 'Raleway';
+  font-family: 'Courier';
+  font-weight:800;
   text-transform: uppercase;
 }
 
@@ -270,6 +304,9 @@ aside {
   position: relative;
   height: 100%;
   overflow-y: auto;
+  font-size: 0.75rem;
+  line-height: 130%;
+  align:justify;
 }
 
 .box .desc p:not(first-of-type) {
@@ -474,13 +511,13 @@ a:hover {
           <a href="#" data-filter="*">All</a>
         </li>
         <li>
-          <a href="#" data-filter=".f1">Filter One</a>
+          <a href="#" data-filter=".f1">Dimensions</a>
         </li>
         <li>
-          <a href="#" data-filter=".f2">Filter One</a>
+          <a href="#" data-filter=".f2">Mobs</a>
         </li>
         <li>
-          <a href="#" data-filter=".f3">Filter One</a>
+          <a href="#" data-filter=".f3">Items</a>
         </li>
       </ul>
     </nav>
@@ -490,17 +527,118 @@ a:hover {
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
     </div>
 
+
+
+<!--To add more copy & paste a line. You can find more icons here: https://feathericons.com/-->
     <!--LINKS-->
-    <ul id="social">
-    <!--To add more copy & paste a line. You can find more icons here: https://feathericons.com/-->
+    <!-- <ul id="social">
       <li><a href="/"><i data-feather="home"></i></a></li>
       <li><a href="/ask"><i data-feather="mail"></i></a></li>
       <li><a href="/ABOUTPAGE"><i data-feather="user"></i></a></li>
       <li><a href="/URL"><i data-feather="info"></i></a></li>
-    </ul>
+    </ul> -->
+
   </aside>
   <main>
     <div id="grid">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- CSS DEMO -->
+
+<!--COPY/PASTE START-->
+<div class="card f2">
+  <a href="#">
+    <div class="overlay"></div>
+    <img src="http://placehold.jp/ddd/666666/250x250.png">
+    <div class="overlay-text">
+      <i class="fas fa-hashtag"></i>
+    </div>
+  </a>
+  <div class="box">
+    <h2>Headline</h2>
+    <!-- <i>Title</i> -->
+    <div class="sep"></div>
+    <div class="desc">Lorem ipsum dolores
+prosit lorem ipsum dolores pro dolores prosit lorem ipsum dolores prosit
+lorem ipsum dolores prosit bla ipsum dolor sit amet, consectetur
+adipiscing elit.
+
+<img src="https://images.unsplash.com/photo-1540225154501-6a35697068f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" style="max-width:250px">
+
+
+    </div>
+  </div>
+</div>
+<!--COPY/PASTE END-->
+
+
+
+<!--COPY/PASTE START-->
+<div class="card f2">
+  <a href="#">
+    <div class="overlay"></div>
+    <img src="http://placehold.jp/ddd/666666/250x250.png">
+    <div class="overlay-text">
+      <i class="fas fa-hashtag"></i>
+    </div>
+  </a>
+  <div class="box">
+    <h2>Headline</h2>
+    <i>Title</i>
+    <div class="sep"></div>
+    <div class="desc">Lorem ipsum dolores
+prosit lorem ipsum dolores pro dolores prosit lorem ipsum dolores prosit
+lorem ipsum dolores prosit bla ipsum dolor sit amet, consectetur
+adipiscing elit.
+
+<img src="https://images.unsplash.com/photo-1540225154501-6a35697068f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" style="max-width:250px">
+
+
+    </div>
+  </div>
+</div>
+<!--COPY/PASTE END-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!--GRID ITEM TEMPLATE-->
       <script id="handlebars-template-grid" type="text/x-handlebars-template">
@@ -527,6 +665,7 @@ a:hover {
       {{/each}}
     </script>
 
+
     <!--TO USE WITHOUT SHEETS-->
     <!--Delete the above grid templates and uncomment & copy/paste the following:-->
     <!--<div class="card f2">
@@ -549,6 +688,15 @@ adipiscing elit.
       </div>
     </div>-->
 
+
+
+
+
+
+
+
+
+
     </div>
   </main>
 </div>
@@ -556,8 +704,8 @@ adipiscing elit.
 </body>
 
   <!--SUCCULENT SCRIPTS-->
-  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/n0nspace/tumblr-themes@latest/sheet%20pages/succulent/succulent.js"></script> -->
-   <script type="text/javascript" src="succulent.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/n0nspace/tumblr-themes@latest/sheet%20pages/succulent/succulent.js"></script>
+   <!-- <script type="text/javascript" src="succulent.js"></script> -->
 
   <script>
   //TEMPLATE LIST

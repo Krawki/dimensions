@@ -13,10 +13,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="icon" type="image/png" href="{Favicon}">
-  <link rel="alternate" type="application/rss+xml" href="{RSS}">
-  <title>{Title}</title>
-  <meta name="description" content="{MetaDescription}" />
+  <!-- <link rel="icon" type="image/png" href="{Favicon}"> -->
+  <!-- <link rel="alternate" type="application/rss+xml" href="{RSS}"> -->
+  <title>import from google sheets (mirror)</title>
+  <!-- <meta name="description" content="{MetaDescription}" /> -->
 
    <!--FONTS-->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Chivo:300,300i,400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
@@ -46,19 +46,34 @@
     2. Create new project
     3. Create credentials, choose API key (copy this)
     4. Restrict application access to HTTP referrer and add the wildcard yoururl.tumblr.com/* (or for multipe sites if needed)
-    5. Libraries > search for Google Sheets > Enable*/
+    5. Libraries > search for Google Sheets > Enable
+
 
 
     // https://docs.google.com/spreadsheets/d/e/2PACX-1vSoBOozfcXt_5t-sYi2qbVSAhMrJtwQiQYZHXGN6wqeKOKi7Blv1sLkN4YnoQhcRyvZV_NF_XlpbVZK/pub?gid=0&single=true&output=csv
+
+    https://docs.google.com/spreadsheets/d/e/2PACX-1vSoBOozfcXt_5t-sYi2qbVSAhMrJtwQiQYZHXGN6wqeKOKi7Blv1sLkN4YnoQhcRyvZV_NF_XlpbVZK/pubhtml?gid=0&single=true
+
+
+    Wiki entries
+    https://docs.google.com/spreadsheets/d/1pmLWCGgFdrdkg_plwYyc5ruEDy4vc6qLqN5L_4-B5PE/edit#gid=0
+
+
+    // const sheetID = 'YourSheetID';
+    // const sheetTab = 'SheetTabName';
+    // const APIkey = 'YourAPIKey';
+
+    */
+
+
+
 
     const sheetID = '1pmLWCGgFdrdkg_plwYyc5ruEDy4vc6qLqN5L_4';
     const sheetTab = 'entries';
     const APIkey = 'AIzaSyAKuzBdtp1Q279bOvN32VRxTbL2pf_1qQ8';
 
 
-    // const sheetID = 'YourSheetID';
-    // const sheetTab = 'SheetTabName';
-    // const APIkey = 'YourAPIKey';
+
 
     /*This lets you enable/disable different colors per tab.
       true = enabled, false = disabled*/
@@ -67,7 +82,8 @@
   </script>
 
   <!--SHEET INTEGRATION-->
-  <script type="text/javascript" src="https://www.dl.dropboxusercontent.com/s/wlxk3q4wkqxescn/nnspc-sheets.js"></script>
+  <!-- <script type="text/javascript" src="https://www.dl.dropboxusercontent.com/s/wlxk3q4wkqxescn/nnspc-sheets.js"></script> -->
+  <script type="text/javascript" src="nnspc-sheets.js"></script>
 
 <style>
 
@@ -1345,7 +1361,8 @@ nav,
   </script>
 
   <!--MIRROR IMAGES SHEETS SCRIPTS w/ Papa Parse-->
-  <script src="https://www.dl.dropboxusercontent.com/s/6x9gqyymrb1vkyi/mirror-images-sheets-3-0-pp.js"></script>
+  <!-- <script src="https://www.dl.dropboxusercontent.com/s/6x9gqyymrb1vkyi/mirror-images-sheets-3-0-pp.js"></script> -->
+  <script src="mirror-images-sheets-3-0-pp.js"></script>
 
   <!--ISOTOPE PLUGIN https://isotope.metafizzy.co/ (for filtering)-->
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
