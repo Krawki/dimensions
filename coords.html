@@ -4,7 +4,9 @@
     <div id="location"></div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
     <script type="text/javascript">
-      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQiBarx6fJqr8a7JWSooPgg67gg4C1xcQDVv-cn2ZNG-V_h8tSD0b_fpVzmGPURBX22A2gxAgipGw8k/pub?output=csv';
+      // var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQiBarx6fJqr8a7JWSooPgg67gg4C1xcQDVv-cn2ZNG-V_h8tSD0b_fpVzmGPURBX22A2gxAgipGw8k/pub?output=csv';
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRpozSLAH_a9vwS0HPsovTKv6I6MpN23i0pvGbstTuC7MZn6L_pV8_1GHcupaOQcIrJbcXwj3N6E4yQ/pub?gid=1486172257&single=true&output=csv';
+
       function init() {
         Papa.parse(public_spreadsheet_url, {
           download: true,
