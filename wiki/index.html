@@ -39,19 +39,27 @@
        https://docs.google.com/spreadsheets/d/
          1jKi9Knw7e5qr4bXr_zQib8FwpGM7E6eqRx1tH3JruIA (this part)
       /edit?usp=sharing
-      
+
     TO GET API KEY:
-    1. Go to https://console.cloud.google.com/projectselector2/apis/dashboard 
+    1. Go to https://console.cloud.google.com/projectselector2/apis/dashboard
     (of the account the sheet is under)
     2. Create new project
     3. Create credentials, choose API key (copy this)
     4. Restrict application access to HTTP referrer and add the wildcard yoururl.tumblr.com/* (or for multipe sites if needed)
     5. Libraries > search for Google Sheets > Enable*/
 
-    const sheetID = 'YourSheetID';
-    const sheetTab = 'SheetTabName';
-    const APIkey = 'YourAPIKey';
-    
+
+    // https://docs.google.com/spreadsheets/d/e/2PACX-1vSoBOozfcXt_5t-sYi2qbVSAhMrJtwQiQYZHXGN6wqeKOKi7Blv1sLkN4YnoQhcRyvZV_NF_XlpbVZK/pub?gid=0&single=true&output=csv
+
+    const sheetID = '1pmLWCGgFdrdkg_plwYyc5ruEDy4vc6qLqN5L_4';
+    const sheetTab = 'entries';
+    const APIkey = 'AIzaSyAKuzBdtp1Q279bOvN32VRxTbL2pf_1qQ8';
+
+
+    // const sheetID = 'YourSheetID';
+    // const sheetTab = 'SheetTabName';
+    // const APIkey = 'YourAPIKey';
+
     /*This lets you enable/disable different colors per tab.
       true = enabled, false = disabled*/
     var colorPerTab = false;
