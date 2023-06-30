@@ -180,11 +180,14 @@ Instructions are in the "INSTRUCTIONS" tab.-->
 <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
 <script>
 function reloadIt() {
-    if (window.location.href.substr(-2) !== "?r") {
-        window.location = window.location.href + "?r";
+    // if (window.location.href.substr(-2) !== "?r") {
+    //     window.location = window.location.href + "?r";
+    // }
+    if (window.location.href.substr(-2) !== "#") {
+        window.location = window.location.href + "#";
     }
 }
-setTimeout('reloadIt()', 1000)();
+setTimeout('reloadIt()', 500)();
 </script>
 
 
