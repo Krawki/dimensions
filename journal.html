@@ -162,7 +162,8 @@ Instructions are in the "INSTRUCTIONS" tab.-->
 
 
 
-<script type='text/javascript'>
+<!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
+<!-- <script type='text/javascript'>
   if( window.localStorage )
   {
     if( !localStorage.getItem('firstLoad') )
@@ -173,7 +174,19 @@ Instructions are in the "INSTRUCTIONS" tab.-->
     else
       localStorage.removeItem('firstLoad');
   }
+</script> -->
+
+
+<!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
+<script>
+function reloadIt() {
+    if (window.location.href.substr(-2) !== "?r") {
+        window.location = window.location.href + "?r";
+    }
+}
+setTimeout('reloadIt()', 1000)();
 </script>
+
 
 
 
