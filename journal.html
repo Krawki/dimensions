@@ -253,7 +253,7 @@ nav a:hover{
   letter-spacing: 1.8px;
   font-size: 9.5pt;
 
-  padding:15px 7px;
+  padding:25px 7px;
   text-align: justify;
   color: #b3a19b;
 }
@@ -335,12 +335,12 @@ main {
   color: #fff;
 }
 
-.card img {
+/* .card img {
   width: var(--cardWidth);
   height: var(--imgHeight);
   object-fit: cover;
   line-height: 0;
-}
+} */
 
 .box {
   position: relative;
@@ -403,6 +403,7 @@ aside {
 
 /* STYLES ADDED */
 
+/*
 .desc img{
     width:100%;
     height:100%;
@@ -410,6 +411,18 @@ aside {
     object-fit: scale-down;
     border:1px solid #000;
 }
+ */
+
+
+.desc img{
+    max-width:100%;
+    max-width:100%;
+    /* align:center; */
+    /* object-fit: scale-down; */
+    border:1px solid #000;
+}
+
+
 
 .subheader{
     font-family:Courier;
@@ -435,9 +448,6 @@ aside {
 }
 
 
-
-
-
 .icon_64px {
     height:64px !important;
     filter: drop-shadow(2px 3px 2px #482525);
@@ -445,9 +455,39 @@ aside {
     padding:-20px 0px !important;
     margin:0px 0px !important;
     border:none !important;
+    filter: drop-shadow(2px 1px 3px rgba(110,40,40,0.3));
+}
+
+.image-float_olddelete {
+    height:auto !important;
+    /* filter: drop-shadow(2px 3px 2px #482525); */
+    filter: drop-shadow(2px 3px 2px #482525);
+    object-fit: none;
+    padding:-20px 0px !important;
+    margin:0px 0px !important;
+    border:none !important;
+    align-content: center;
+    align: center;
+    align-items: center;
+    width:100%;
+    max-height:100%;
 }
 
 
+
+.image-float {
+    filter: drop-shadow(2px 1px 3px rgba(110,40,40,0.3));
+    align-content: center;
+    border:none !important;
+}
+
+
+.image-banner img {
+  width: var(--cardWidth);
+  height: var(--imgHeight);
+  object-fit: cover;
+  line-height: 0;
+}
 
 
 
@@ -656,7 +696,7 @@ weapons
         <!--CSS DEMOING - COPY/PASTE START-->
 <!--
 <div class="card f2">
-<img src="http://placehold.jp/ddd/666666/250x250.png">
+<div class="image-banner"><img src="http://placehold.jp/ddd/666666/250x250.png"></div>
 <div class="box">
 <h2>Headline</h2>
 <i>subtitle</i>
@@ -666,10 +706,14 @@ prosit lorem ipsum dolores pro dolores prosit lorem ipsum dolores prosit
 lorem ipsum dolores prosit bla ipsum dolor sit amet, consectetur
 adipiscing elit.
 
+<br><br>
+<img src='assets/imgs/diagrams/aether portal.png' class='image-float'>
+
+
 <br><br><img src='assets/imgs/default_icons/diamond_x4.png' class='icon_64px'>
 
 <br><br>
-<img src="https://camo.githubusercontent.com/4820d97b35c3c3391186fd2c8c03eae0083ef1b7eea1603f01aac6729cfd8c70/68747470733a2f2f692e6779617a6f2e636f6d2f66636532326431613137356231353264363636343266323966306535393936652e706e67" class="card-image">
+<img src='https://camo.githubusercontent.com/4820d97b35c3c3391186fd2c8c03eae0083ef1b7eea1603f01aac6729cfd8c70/68747470733a2f2f692e6779617a6f2e636f6d2f66636532326431613137356231353264363636343266323966306535393936652e706e67'>
 
 
 </div>
