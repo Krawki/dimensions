@@ -151,14 +151,29 @@ Instructions are in the "INSTRUCTIONS" tab.-->
 
 
   <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-  <script>
+<!-- <script type='text/javascript'>
   window.onload = function() {
     if(!window.location.hash) {
         window.location = window.location + '#loaded';
         window.location.reload();
     }
   }
-  </script>
+</script> -->
+
+
+
+<script type='text/javascript'>
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }
+    else
+      localStorage.removeItem('firstLoad');
+  }
+</script>
 
 
 
