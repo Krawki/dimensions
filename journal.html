@@ -180,11 +180,8 @@ Instructions are in the "INSTRUCTIONS" tab.-->
 <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
 <script>
 function reloadIt() {
-    // if (window.location.href.substr(-2) !== "?r") {
-    //     window.location = window.location.href + "?r";
-    // }
-    if (window.location.href.substr(-2) !== "#") {
-        window.location = window.location.href + "#";
+    if (window.location.href.substr(-2) !== "?r") {
+        window.location = window.location.href + "?r";
     }
 }
 setTimeout('reloadIt()', 500)();
@@ -202,7 +199,8 @@ setTimeout('reloadIt()', 500)();
 :root {
   --fontSize: 15px;
   --cardWidth: 400px; /*entire card*/
-  --imgHeight: 250px;
+  /* --imgHeight: 250px; */
+  --imgHeight: 150px;
 
   --accent: #2f201d;
   --accent: #e4b176;
